@@ -32,7 +32,7 @@ module.exports = function LoginPage() {
           Отправить
         </button>
       </form>
-      <script src="/js/login.js" />
+      <script src="/js/login.js" defer />
     </Layout>
   );
 };

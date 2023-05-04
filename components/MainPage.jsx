@@ -2,9 +2,9 @@ const React = require('react');
 const Layout = require('./Layout');
 const Themes = require('./Themes');
 
-module.exports = function MainPage({ themes,title }) {
+module.exports = function MainPage({ themes,title, user }) {
   return (
-    <Layout title={title}>
+    <Layout title={title} user={user}>
       <h1>W E L C O M E!</h1> <br/>
       <h4>Моя игра, моя игра
 Она мне принадлежит и таким же как и я,
@@ -25,7 +25,7 @@ module.exports = function MainPage({ themes,title }) {
        
         {themes.map((theme) => (
           //  Передаем темы
-          <Themes key={theme.id} theme={theme} showButtons={false} />
+          <Themes key={theme.id} theme={theme} user={user} />
         ))}
       </div>
     </Layout>

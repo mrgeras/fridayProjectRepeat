@@ -1,6 +1,6 @@
 const React = require('react');
 
-module.exports = function Themes({ theme, showButtons }) {
+module.exports = function Themes({ theme, user }) {
   return (
     <div
       data-id={theme.id}
@@ -11,7 +11,7 @@ module.exports = function Themes({ theme, showButtons }) {
         <div className="theme-body">
           <br />
           <div className="btn-group" role="group" aria-label="Basic example">
-            {showButtons && (
+            {user && (
               <>
                 <div
                   className="btn-group"

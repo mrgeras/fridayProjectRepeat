@@ -1,11 +1,13 @@
 const router = require('express').Router();
+const LoginPage = require('../../components/LoginPage');
 const MainPage = require('../../components/MainPage');
+const RegisterPage = require('../../components/RegisterPage');
 const { Theme } = require('../../db/models');
 
 router.get('/', async (req, res) => {
   try {
     const themes = await Theme.findAll({ order: [['createdAt', 'DESC']] });
-    console.log(themes);
+    // console.log(themes);
     res.send(
       res.renderComponent(MainPage, { title: 'Главная страница', themes })
     );
@@ -14,5 +16,31 @@ router.get('/', async (req, res) => {
     res.json(error.message);
   }
 });
+router.get('/auth/login', async (req, res) => {
+  try {
+    // const themes = await Theme.findAll({ order: [['createdAt', 'DESC']] });
+    // console.log(themes);
+    res.send(
+      res.renderComponent(LoginPage, { title: 'Авторизация' })
+    );
+  } catch (error) {
+    console.log(error);
+    res.json(error.message);
+  }
+});
+router.get('/auth/register', async (req, res) => {
+  try {
+    // const themes = await Theme.findAll({ order: [['createdAt', 'DESC']] });
+    // console.log(themes);
+    res.send(
+      res.renderComponent(RegisterPage, { title: 'Регистрация' })
+    );
+  } catch (error) {
+    console.log(error);
+    res.json(error.message);
+  }
+});
+
+
 
 module.exports = router;

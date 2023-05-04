@@ -1,7 +1,7 @@
 const React = require('react');
 const Navigation = require('./Navigation');
 
-function Layout({ children, title }) {
+function Layout({ children, title, user}) {
   return (
     <html lang="ru">
       <head>
@@ -10,7 +10,7 @@ function Layout({ children, title }) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-        <link rel="stylesheet" href="/style.css" />
+        <link rel="stylesheet" href="/css/style.css" />
         <title>{title} </title>
         <link
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
@@ -30,7 +30,7 @@ function Layout({ children, title }) {
       </head>
       <body>
         <header>
-          <Navigation />
+          <Navigation user={user} />
         </header>
         <div className="container">{children}</div>
       </body>

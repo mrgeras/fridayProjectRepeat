@@ -10,6 +10,7 @@ const sessionConfig = require('./config/session');
 
 
 const mainRoute = require('./routes/view/main.route'); // главная страница
+const authRoute = require('./routes/api/auth.route'); // главная страница
 
 const app = express();
 
@@ -24,5 +25,6 @@ app.use(ssr);
 app.use(morgan('dev'));
 
 app.use('/', mainRoute);
+app.use('/api/auth/', authRoute);
 
 app.listen(PORT, () => console.log(`Сервируем сервер${PORT} персон`));
