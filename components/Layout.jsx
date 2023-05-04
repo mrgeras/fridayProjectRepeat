@@ -30,7 +30,7 @@ function Layout({ children, title }) {
       </head>
       <body>
         <header>
-          <Navigation user={user} />
+          <Navigation />
         </header>
         <div className="container">{children}</div>
       </body>
