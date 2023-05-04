@@ -14,3 +14,11 @@
 .answer{
     display: none;
 }
+.mainContainer{
+  display: flex;
+  flex-direction: column;
+}
+.wrapper__theme{
+  display: flex;
+  flex-wrap: wrap;
+}
