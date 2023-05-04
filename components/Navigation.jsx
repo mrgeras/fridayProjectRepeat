@@ -10,7 +10,7 @@ function Navigation({ user }) {
           </li>
 
           <li className="nav-item">
-            <a className="nav-link" href="/auth/logout">
+            <a className="nav-link" href="/logout">
               Выйти
             </a>
           </li>
