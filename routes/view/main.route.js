@@ -41,6 +41,15 @@ router.get('/auth/register', async (req, res) => {
   }
 });
 
+router.get('/logout', (req, res) => {
+  // удаление сессии
+  req.session.destroy(() => {
+    // очищаем куку (название куки лежит в config/session.js свойство cookie.name)
+    res.clearCookie('user_sid');
+    res.redirect('/');
+  });
+});
+
 
 
 module.exports = router;

@@ -35,14 +35,16 @@ module.exports = function MainPage({ themes, title, user }) {
           </p>
         </div>
         <br />
-        <h3>
-          Чтобы сыграть в эту Раз*ёмную игру, ЗАРЕГИСТРИРУЙСЯ (АВТОРИЗУЙСЯ)
-        </h3>
+        {!user && (
+          <h3>
+            Чтобы сыграть в эту Раз*ёмную игру, ЗАРЕГИСТРИРУЙСЯ (АВТОРИЗУЙСЯ)
+          </h3>
+        )}
         <br />
         <div className="mainBlock">
           {themes.map((theme) => (
             //  Передаем темы
-            <Themes key={theme.id} theme={theme} user={user}/>
+            <Themes key={theme.id} theme={theme} user={user} />
           ))}
         </div>
       </div>
