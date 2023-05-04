@@ -6,6 +6,7 @@ require('dotenv').config();
 const morgan = require('morgan');
 const getUser = require('./middleware/getUser');
 const ssr = require('./middleware/ssr');
+const sessionConfig = require('./config/session');
 
 const app = express();
 
