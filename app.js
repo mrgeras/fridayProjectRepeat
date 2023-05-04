@@ -25,4 +25,4 @@ app.use(morgan('dev'));
 
 app.use('/', mainRoute);
 
-app.listen(PORT, () => console.log(`Сервируем сервер${PORT} персон`));
+app.listen(PORT, () => console.log(`Сервируем сервер ${PORT} персон`));
