@@ -1,25 +1,18 @@
 const React = require('react');
 
-module.exports = function Themes({ card, showButtons }) {
+module.exports = function Themes({ theme, showButtons }) {
   return (
     <div
-      data-id={card.id}
-      className="card card-card card-container-add card-container-edit card-container-del"
+      data-id={theme.id}
+      className="theme theme-theme theme-container-add theme-container-edit theme-container-del"
     >
-      <div className="wrapper__card">
-        <div className="themeCard hidden">{card.theme}</div>
-        <div className="card-body">
+      <div className="wrapper__theme">
+        <div className="themeTheme hidden">{theme.theme}</div>
+        <div className="theme-body">
           <br />
           <div className="btn-group" role="group" aria-label="Basic example">
             {showButtons && (
               <>
-                <form
-                  id="formId"
-                  className="edit-card mb-3"
-                  style={{ display: 'none' }}
-                >
-                  <input name="theme" defaultValue={card.theme} />
-                </form>
                 <div
                   className="btn-group"
                   role="group"
@@ -27,7 +20,7 @@ module.exports = function Themes({ card, showButtons }) {
                 >
                   <button
                     type="button"
-                    className="show-card btn btn-warning edit-ad"
+                    className="show-theme btn btn-warning edit-ad"
                   >
                     Выбрать
                   </button>
