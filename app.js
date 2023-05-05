@@ -27,4 +27,4 @@ app.use(morgan('dev'));
 app.use('/', mainRoute);
 app.use('/api/auth/', authRoute);
 
-app.listen(PORT, () => console.log(`Сервируем сервер${PORT} персон`));
+app.listen(PORT, () => console.log(`Сервируем сервер на ${PORT} персон`));
