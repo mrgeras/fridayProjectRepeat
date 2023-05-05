@@ -1,7 +1,11 @@
+const React = require('react');
+const ReactDOMServer = require('react-dom/server');
 const router = require('express').Router();
-
+const RightAnswer = require('../../components/RightAnswer');
 const { Card } = require('../../db/models');
-const Question = require('../../components/Question');
+const AllCards = require('../../components/AllCards');
+
+
 
 router.get('/:id', async (req, res) => {
   try {
@@ -11,17 +15,9 @@ router.get('/:id', async (req, res) => {
 
     //проверяем количесво вопросов
     const countQuest = questions.length;
-    // console.log(countQuest);
-    if (!req.session.index) {
-      req.session.index = 0;
-      const question = questions[req.session.index];
-      //   console.log(question.answer);
-      res.send(res.renderComponent(Question, { title: 'Вопрос', question }));
-    } else {
-      req.session.index += 1;
-      const question = questions[req.session.index];
-      res.send(res.renderComponent(Question, { title: 'Вопрос', question }));
-    }
+
+    res.renderComponent(AllCards, { title: 'Вопрос', questions });
+    // }
   } catch (error) {
     console.log(error);
   }
@@ -30,14 +26,19 @@ router.get('/:id', async (req, res) => {
 router.put('/:idQuestion/put', async (req, res) => {
   try {
     const userAnswer = req.body.ans;
-    console.log(userAnswer, '++++++++++++++++++++++++++++++');
+    // console.log(userAnswer, '++++++++++++++++++++++++++++++');
     const question = await Card.findOne({
       where: { id: req.params.idQuestion },
     });
-
-      if(userAnswer === question.answer) {
-        console.log('УРА идем на обед');
-      }
+    // console.log(question);
+    if (userAnswer === question.answer) {
+      const elem = React.createElement(RightAnswer, {
+        id: question.theme_id,
+      });
+      const html = ReactDOMServer.renderToStaticMarkup(elem);
+      // console.log(html);
+      res.status(201).json(html);
+    }
   } catch (error) {
     console.log(error);
   }

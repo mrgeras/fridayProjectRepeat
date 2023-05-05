@@ -3,6 +3,9 @@ const React = require('react');
 function Navigation({ user }) {
   return (
     <ul className="nav justify-content-end">
+      <a href="/">
+        <img src="/img/logo.png" className="logo" alt="logo" />
+      </a>
       {user ? (
         <>
           <li className="nav-item">

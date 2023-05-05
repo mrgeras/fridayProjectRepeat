@@ -1,24 +1,31 @@
 const React = require('react');
 const Layout = require('./Layout');
 
-function Question({ question, title, user }) {
-  
+function Question({ question1, title, user }) {
   return (
-    <Layout title={title} user={user}>
-      {console.log(question.answer)}
+      // {console.log(question.answer)}
       <div className="pole">
-        <div className="count">у тебя: -- очков</div>
+        <div className="count">{`Привет, ${user.login.toUpperCase()}! У тебя: -- очков`}</div>
+        <br />
         {/* <div >{question.theme}</div> */}
-        <div className="question">{question.question}</div>
-        <div className="answer">{question.answer}</div>
-        <br></br>
-        <form id='answerForm' data-id={question.id}>
-          <input name='answerUser' placeholder="введите ответ" className="question "></input>
-          <button type='submit'>Ответить</button>
-        </form>
+
+        <div className="containerForQuest">
+          <div>
+ 
+            <div className="question">{question1.question}</div>
+            {/* <div className="answer">{question1.answer}</div> */}
+            <br></br>
+            <form id="answerForm" data-id={question1.id}>
+              <input
+                name="answerUser"
+                placeholder="введите ответ"
+                className="question "
+              ></input>
+              <button type="submit">Ответить</button>
+            </form>
+          </div>
+        </div>
       </div>
-      
-    </Layout>
   );
 }
 

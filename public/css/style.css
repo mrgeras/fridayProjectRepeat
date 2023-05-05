@@ -16,6 +16,21 @@
     inset -8px -8px 16px 0px rgba(145, 192, 255, 0.6),
     inset 0px 11px 28px 0px rgb(255, 255, 255);
 }
-.answer{
-    display: none;
+.answer {
+  display: none;
 }
+.logo {
+  width: 80px;
+}
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 5em;
+  background: #000;
+  box-sizing: border-box;
+  margin-top: 1em;
+  color: #fff;
+}
+
