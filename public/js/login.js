@@ -4,6 +4,7 @@ form.addEventListener('submit', async (event) => {
   event.preventDefault();
 
   const { login, password } = event.target;
+  // console.log(123);
 
   const response = await fetch('/api/auth/login', {
     method: 'POST',
