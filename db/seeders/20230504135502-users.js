@@ -6,7 +6,7 @@ module.exports = {
       'Users',
       [
         {
-          login: 'Фёдор',
+          login: 'Федор',
           password: await bcrypt.hash('123', 10),
           count: 0,
           createdAt: new Date(),
@@ -14,7 +14,7 @@ module.exports = {
         },
         {
           login: 'Петя',
-          password: await bcrypt.hash('1234', 10),
+          password: await bcrypt.hash('123', 10),
           count: 0,
           createdAt: new Date(),
           updatedAt: new Date(),
