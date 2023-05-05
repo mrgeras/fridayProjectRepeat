@@ -9,8 +9,11 @@ const ssr = require('./middleware/ssr');
 const sessionConfig = require('./config/session');
 
 const mainRoute = require('./routes/view/main.route'); // главная страница
+
 const authApiRoute = require('./routes/api/auth.routes'); // главная страница
 const authRoute = require('./routes/view/auth.routes');
+const gameRoute = require('./routes/api/game.route'); // игра
+
 
 const app = express();
 
@@ -25,7 +28,11 @@ app.use(ssr);
 app.use(morgan('dev'));
 
 app.use('/', mainRoute);
+
 app.use('/auth', authRoute);
 app.use('/api/auth/', authApiRoute);
+
+app.use('/api/game/', gameRoute);
+
 
 app.listen(PORT, () => console.log(`Сервируем сервер на ${PORT} персон`));
