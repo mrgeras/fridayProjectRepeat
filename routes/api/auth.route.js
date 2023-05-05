@@ -26,6 +26,7 @@ router.post('/register', async (req, res) => {
     });
     req.session.userId = user.id;
     req.session.userName = user.name;
+
   
      
     res.status(201).json({ success: true });

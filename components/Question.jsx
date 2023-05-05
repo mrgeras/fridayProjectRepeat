@@ -1,13 +1,13 @@
 const React = require('react');
 
 
-function Question({ user, theme}) {
+function Question({question}) {
   return (
    <div className='pole'>
-   <div className='count'>у тебя: {user.count} руб</div>
+   <div className='count'>у тебя: -- очков</div>
     <div >{theme.theme}</div>
-    <div className='question'>{card.question}</div> 
-    <div className='answer'>{card.answer}</div>
+    <div className='question'>{question.question}</div> 
+    <div className='answer'>{question.answer}</div>
     <input placeholder='введите ответ'  className='question '></input>
    
     <button >ок</button>

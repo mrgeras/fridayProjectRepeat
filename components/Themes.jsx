@@ -18,8 +18,8 @@ module.exports = function Themes({ theme, user }) {
                   role="group"
                   aria-label="Basic example"
                 >
-                  <button
-                    type="button"
+                  <button 
+                    type="button" id={theme.id}
                     className="show-theme btn btn-warning edit-ad"
                   >
                     Выбрать
