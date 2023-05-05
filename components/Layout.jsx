@@ -3,13 +3,14 @@ const Navigation = require('./Navigation');
 
 function Layout({ children, title, user}) {
   return (
-    <html lang="ru">
+    <html lang="en">
       <head>
-        <meta charset="utf-8" />
+        <meta charSet="utf-8" />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
+          <link rel="icon" href="/img/favicon.png" sizes="32x32" />
         <link rel="stylesheet" href="/css/style.css" />
         <title>{title} </title>
         <link
@@ -33,6 +34,7 @@ function Layout({ children, title, user}) {
           <Navigation user={user} />
         </header>
         <div className="container">{children}</div>
+        <footer>&copy; 2023</footer>
       </body>
       <script src = '/js/game.js' defer></script>
     </html>
