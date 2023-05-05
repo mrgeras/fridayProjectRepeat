@@ -7,7 +7,7 @@ module.exports = function Themes({ theme, user }) {
       className="theme theme-theme theme-container-add theme-container-edit theme-container-del"
     >
       <div className="wrapper__theme">
-        <div className="themeTheme hidden">{theme.theme}</div>
+
         <div className="theme-body">
           <br />
           <div className="btn-group" role="group" aria-label="Basic example">
@@ -21,8 +21,8 @@ module.exports = function Themes({ theme, user }) {
                   <button 
                     type="button" id={theme.id}
                     className="show-theme btn btn-warning edit-ad"
-                  >
-                    Выбрать
+                  > <a href={`/api/game/${theme.id}`}>{theme.theme}</a>
+                  
                   </button>
                 </div>
               </>

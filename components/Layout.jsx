@@ -34,6 +34,7 @@ function Layout({ children, title, user}) {
         </header>
         <div className="container">{children}</div>
       </body>
+      <script src = '/js/game.js' defer></script>
     </html>
   );
 }
