@@ -1,12 +1,17 @@
-const mainBlock = document.querySelector('.mainBlock');
-mainBlock.addEventListener('click', async (e)=>{
-    if(mainBlock){
-        e.target.classList.contains('show-theme');
-const btn = e.target;
-const div = btn.closest('.theme')
-const id = div.dataset.id;
-// console.log(id);
-const response = await fetch(`/api/game/${id}`, {method: 'GET'} )
-    }
-})
-const card = document.querySelector('.show-theme');
+const answerForm = document.getElementById('answerForm');
+
+if (answerForm) {
+  answerForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const { answerUser } = e.target;
+    const idQestion = e.target.dataset.id;
+    const ans = answerUser.value;
+    console.log(ans, '+++++++++++++++++++++++++++++');
+
+    const response = await fetch(`/api/game/${idQestion}/put`, {
+      method: 'PUT',
+      body: JSON.stringify({ ans }),
+      headers: { 'Content-Type': 'application/json' },
+    });
+  });
+}

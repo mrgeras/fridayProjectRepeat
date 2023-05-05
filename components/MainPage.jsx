@@ -48,7 +48,7 @@ module.exports = function MainPage({ themes, title, user }) {
           ))}
         </div>
       </div>
-      <script src = 'js/game.js'></script>
+      {/* <script src = 'js/game.js'></script> */}
     </Layout>
   );
 };
